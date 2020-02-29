@@ -1,6 +1,7 @@
 <?php
 declare (strict_types = 1);
 include_once 'includes/autoload.inc.php';
+
 ?>
   <!DOCTYPE html>
 <html lang="en">

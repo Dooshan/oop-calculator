@@ -1,8 +1,6 @@
-<?php 
-declare(strict_types = 1);
+<?php
 
-use classes\Calculator;
-
+declare(strict_types=1);
 include_once 'autoload.inc.php';
 
 if (isset($_POST['submit'])) {
@@ -11,6 +9,11 @@ if (isset($_POST['submit'])) {
     $first_number = $_POST['first_number'];
     $second_number = $_POST['second_number'];
 
-    $calculator = new Calculator()
-}
-else "Please, submit the form!";
+    $calculator = new Calculator($operator, (int) $first_number, (int) $second_number);
+
+    try {
+        echo $calculator->calculate();
+    } catch (TypeError $e) {
+        echo "Error!: " . $e->getMessage();
+    }
+} else "Please, submit the form!";

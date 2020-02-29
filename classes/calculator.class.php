@@ -1,8 +1,6 @@
 <?php
-
-namespace classes;
-
 class Calculator
+
 {
 
     private $first_number;
@@ -17,7 +15,7 @@ class Calculator
     }
 
 
-    public function calculator()
+    public function calculate()
     {
         switch ($this->operator) {
             case 'add':
@@ -31,10 +29,11 @@ class Calculator
             case 'div':
                 if ($this->second_number !== 0) {
                     $result = $this->first_number / $this->second_number;
+                    return $result;
                 } else {
                     echo "You are trying to divide with zero, please enter another number";
                 }
-                return $result;
+
                 break;
             case 'mul':
                 $result = $this->first_number * $this->second_number;
@@ -45,16 +44,5 @@ class Calculator
                 echo "Error!";
                 break;
         }
-    }
-
-
-
-
-
-    public function addition($first_number, $second_number)
-    {
-        $this->first_number = $first_number;
-        $this->second_number = $second_number;
-        return $first_number + $second_number;
     }
 }
